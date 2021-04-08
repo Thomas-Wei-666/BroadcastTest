@@ -10,6 +10,6 @@ public class MyBroadcastReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         Toast.makeText(context,"message received!",Toast.LENGTH_SHORT).show();
-        throw new UnsupportedOperationException("Not yet implemented");
+
     }
 }
