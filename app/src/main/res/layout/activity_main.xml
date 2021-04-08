@@ -26,6 +26,14 @@
         android:textAllCaps="false"
         android:textSize="30sp"
         android:text="Send Broadcast"/>
+    <Button
+        android:id="@+id/start_act2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:textSize="30sp"
+        android:text="Start Activity2"
+        android:layout_marginHorizontal="10dp"/>
 
 
 </LinearLayout>

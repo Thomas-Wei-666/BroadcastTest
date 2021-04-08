@@ -4,7 +4,7 @@
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-    <uses-permission android:name="android.permission.RESTART_PACKAGES"/>
+    <uses-permission android:name="android.permission.RESTART_PACKAGES" />
 
     <application
         android:allowBackup="true"
@@ -13,12 +13,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Broadcast">
+        <activity android:name=".LocalBroadcastTest"></activity>
+
         <receiver
             android:name=".MyBroadcastReceiver"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.EDIT"/>
+                <action android:name="android.intent.action.EDIT" />
             </intent-filter>
         </receiver>
         <receiver
@@ -26,16 +28,16 @@
             android:enabled="true"
             android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
-            <!-- 加上监听sd卡启动的infliter，也！不！行！.......TAT-->
-            <intent-filter >
-                <action android:name="android.intent.action.MEDIA_MOUNTED"/>
-                <action android:name="android.intent.action.MEDIA_UNMOUNTED"/>
-                <data android:scheme="file">
-                </data>
+            <!-- 加上监听sd卡启动的infliter，也！不！行！.......TAT -->
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_MOUNTED" />
+                <action android:name="android.intent.action.MEDIA_UNMOUNTED" />
+
+                <data android:scheme="file"></data>
             </intent-filter>
-            <!--  Android 3.4.1版本之后应用装在sd卡上面，sd卡初始化在系统发送了BOOT_COMPELETED消息之后，所以无法收到-->
+            <!-- Android 3.4.1版本之后应用装在sd卡上面，sd卡初始化在系统发送了BOOT_COMPELETED消息之后，所以无法收到 -->
         </receiver>
 
         <activity android:name=".MainActivity">
